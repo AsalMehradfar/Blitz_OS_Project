@@ -1,0 +1,422 @@
+Script started on 2021-03-28 21:40:43+04:30 [TERM="xterm" TTY="/dev/pty0" COLUMNS="80" LINES="24"]
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ make
+kpl Main -unsafe
+asm Main.s
+lddd System.o List.o Thread.o Switch.o Synch.o Main.o Runtime.o -o os
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -*[Kg os
+Beginning execution...
+====================  KPL PROGRAM STARTING  ====================
+Example Thread-based Programs...
+Initializing Thread Scheduler...
+
+-- You should see 70 lines, each consecutively numbered. --
+
+LockTester-A = 1
+LockTester-B = 2
+LockTester-C = 3
+LockTester-D = 4
+LockTester-A = 5
+LockTester-E = 6
+LockTester-G = 7
+LockTester-F = 8
+LockTester-C = 9
+LockTester-B = 10
+LockTester-D = 11
+LockTester-A = 12
+LockTester-G = 13
+LockTester-F = 14
+LockTester-C = 15
+LockTester-E = 16
+LockTester-B = 17
+LockTester-D = 18
+LockTester-G = 19
+LockTester-A = 20
+LockTester-F = 21
+LockTester-C = 22
+LockTester-E = 23
+LockTester-D = 24
+LockTester-G = 25
+LockTester-B = 26
+LockTester-F = 27
+LockTester-A = 28
+LockTester-C = 29
+LockTester-D = 30
+LockTester-G = 31
+LockTester-E = 32
+LockTester-B = 33
+LockTester-F = 34
+LockTester-C = 35
+LockTester-A = 36
+LockTester-D = 37
+LockTester-G = 38
+LockTester-E = 39
+LockTester-F = 40
+LockTester-C = 41
+LockTester-B = 42
+LockTester-A = 43
+LockTester-D = 44
+LockTester-G = 45
+LockTester-F = 46
+LockTester-C = 47
+LockTester-E = 48
+LockTester-B = 49
+LockTester-A = 50
+LockTester-D = 51
+LockTester-G = 52
+LockTester-F = 53
+LockTester-C = 54
+LockTester-E = 55
+LockTester-B = 56
+LockTester-A = 57
+LockTester-D = 58
+LockTester-G = 59
+LockTester-F = 60
+LockTester-C = 61
+LockTester-E = 62
+LockTester-B = 63
+LockTester-A = 64
+LockTester-D = 65
+LockTester-G = 66
+LockTester-F = 67
+LockTester-E = 68
+LockTester-B = 69
+LockTester-E = 70
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+Done!  The next instruction to execute will be:
+000EC8: 09000000       ret     
+Number of Disk Reads    = 0
+Number of Disk Writes   = 0
+Instructions Executed   = 894008
+Time Spent Sleeping     = 0
+    Total Elapsed Time  = 894008
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -g os | grep LockTester-A
+LockTester-A = 1
+LockTester-A = 5
+LockTester-A = 12
+LockTester-A = 20
+LockTester-A = 28
+LockTester-A = 36
+LockTester-A = 43
+LockTester-A = 50
+LockTester-A = 57
+LockTester-A = 64
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -g os | grep LockTester-A[KB
+LockTester-B = 2
+LockTester-B = 10
+LockTester-B = 17
+LockTester-B = 26
+LockTester-B = 33
+LockTester-B = 42
+LockTester-B = 49
+LockTester-B = 56
+LockTester-B = 63
+LockTester-B = 69
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -g os | grep LockTester-B[KC
+LockTester-C = 3
+LockTester-C = 9
+LockTester-C = 15
+LockTester-C = 22
+LockTester-C = 29
+LockTester-C = 35
+LockTester-C = 41
+LockTester-C = 47
+LockTester-C = 54
+LockTester-C = 61
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -g os | grep LockTester-C[KD
+LockTester-D = 4
+LockTester-D = 11
+LockTester-D = 18
+LockTester-D = 24
+LockTester-D = 30
+LockTester-D = 37
+LockTester-D = 44
+LockTester-D = 51
+LockTester-D = 58
+LockTester-D = 65
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -g os | grep LockTester-D[KF[KE
+LockTester-E = 6
+LockTester-E = 16
+LockTester-E = 23
+LockTester-E = 32
+LockTester-E = 39
+LockTester-E = 48
+LockTester-E = 55
+LockTester-E = 62
+LockTester-E = 68
+LockTester-E = 70
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -g os | grep LockTester-E[KF
+LockTester-F = 8
+LockTester-F = 14
+LockTester-F = 21
+LockTester-F = 27
+LockTester-F = 34
+LockTester-F = 40
+LockTester-F = 46
+LockTester-F = 53
+LockTester-F = 60
+LockTester-F = 67
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -g os | grep LockTester-F[KG
+LockTester-G = 7
+LockTester-G = 13
+LockTester-G = 19
+LockTester-G = 25
+LockTester-G = 31
+LockTester-G = 38
+LockTester-G = 45
+LockTester-G = 52
+LockTester-G = 59
+LockTester-G = 66
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ make
+kpl Main -unsafe
+asm Main.s
+lddd System.o List.o Thread.o Switch.o Synch.o Main.o Runtime.o -o os
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz -g os
+Beginning execution...
+====================  KPL PROGRAM STARTING  ====================
+Example Thread-based Programs...
+Initializing Thread Scheduler...
+        Producer-A         A
+A       Producer-B             B
+AB      Producer-B             B
+ABB     Producer-C                 C
+ABBC    Producer-D                     D
+ABBCD   Consumer-1                               |      A
+BBCD    Consumer-2                               |          B
+BCD     Consumer-3                               |              B
+CD      Consumer-1                               |      C
+D       Producer-A         A
+DA      Consumer-2                               |          D
+A       Producer-B             B
+AB      Producer-D                     D
+ABD     Producer-E                         E
+ABDE    Consumer-3                               |              A
+BDE     Producer-C                 C
+BDEC    Consumer-1                               |      B
+DEC     Consumer-2                               |          D
+EC      Consumer-3                               |              E
+C       Producer-A         A
+CA      Consumer-1                               |      C
+A       Producer-B             B
+AB      Producer-D                     D
+ABD     Producer-E                         E
+ABDE    Consumer-2                               |          A
+BDE     Producer-C                 C
+BDEC    Consumer-3                               |              B
+DEC     Consumer-1                               |      D
+EC      Consumer-2                               |          E
+C       Producer-A         A
+CA      Consumer-3                               |              C
+A       Producer-B             B
+AB      Producer-D                     D
+ABD     Producer-E                         E
+ABDE    Consumer-1                               |      A
+BDE     Producer-C                 C
+BDEC    Consumer-2                               |          B
+DEC     Consumer-3                               |              D
+EC      Consumer-1                               |      E
+C       Producer-A         A
+CA      Consumer-2                               |          C
+A       Producer-D                     D
+AD      Producer-E                         E
+ADE     Producer-C                 C
+ADEC    Consumer-3                               |              A
+DEC     Consumer-1                               |      D
+EC      Producer-E                         E
+ECE     Consumer-2                               |          E
+CE      Consumer-3                               |              C
+E       Consumer-1                               |      E
+     
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+Done!  The next instruction to execute will be:
+000EC8: 09000000       ret     
+Number of Disk Reads    = 0
+Number of Disk Writes   = 0
+Instructions Executed   = 526918
+Time Spent Sleeping     = 0
+    Total Elapsed Time  = 526918
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ make
+kpl Main -unsafe
+asm Main.s
+lddd System.o List.o Thread.o Switch.o Synch.o Main.o Runtime.o -o os
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ blitz --[Kg os
+Beginning execution...
+====================  KPL PROGRAM STARTING  ====================
+Example Thread-based Programs...
+Initializing Thread Scheduler...
+Plato
+    Sartre
+        Kant
+            Nietzsche
+                Aristotle
+.   .   .   .   .   
+    .   .   .   .   
+E   .   .   .   .   
+E       .   .   .   
+E           .   .   
+E       E   .   .   
+.       E   .   .   
+.       E       .   
+.       E           
+.       E       E   
+.       .       E   
+.   E   .       E   
+    E   .       E   
+    E   .       .   
+    E   .   E   .   
+    E       E   .   
+    E       E       
+    .       E       
+E   .       E       
+E   .       .       
+E   .   E   .       
+E       E   .       
+E       E           
+.       E           
+.       E       E   
+.       .       E   
+.   E   .       E   
+    E   .       E   
+    E           E   
+    E           .   
+    E       E   .   
+    .       E   .   
+E   .       E   .   
+E   .       E       
+E           E       
+E           .       
+E       E   .       
+.       E   .       
+.       E   .   E   
+.       E       E   
+        E       E   
+        .       E   
+    E   .       E   
+    E   .       .   
+    E   .   E   .   
+    E       E   .   
+    E       E       
+    .       E       
+E   .       E       
+E   .       .       
+E   .   E   .       
+E       E   .       
+E       E           
+.       E           
+.       E       E   
+.       .       E   
+.   E   .       E   
+    E   .       E   
+    E           E   
+    E           .   
+    E       E   .   
+    .       E   .   
+E   .       E   .   
+E   .       E       
+E           E       
+E           .       
+E       E   .       
+.       E   .       
+.       E   .   E   
+.       E       E   
+        E       E   
+        .       E   
+    E   .       E   
+    E   .       .   
+    E   .   E   .   
+    E       E   .   
+    E       E       
+    .       E       
+E   .       E       
+E   .       .       
+E   .   E   .       
+E       E   .       
+E       E           
+.       E           
+.       E       E   
+.       .       E   
+.   E   .       E   
+    E   .       E   
+    E           E   
+    E           .   
+    E       E   .   
+    .       E   .   
+E   .       E   .   
+E   .       E       
+E           E       
+E           .       
+E       E   .       
+.       E   .       
+.       E   .   E   
+.       E       E   
+.       .       E   
+.   E   .       E   
+.   E   .       .   
+.   E   .   E   .   
+.   .   .   E   .   
+.   .   .   .   .   
+
+*****  A 'wait' instruction was executed and no more interrupts are scheduled... halting emulation!  *****
+
+Done!  The next instruction to execute will be:
+000EC8: 09000000       ret     
+Number of Disk Reads    = 0
+Number of Disk Writes   = 0
+Instructions Executed   = 1081264
+Time Spent Sleeping     = 0
+    Total Elapsed Time  = 1081264
+]0;~/WorkSpace/OS/96105434/p2
+[32mmehradfar@DESKTOP-7VCI5D1 [33m~/WorkSpace/OS/96105434/p2[0m
+$ exit
+exit
+
+Script done on 2021-03-28 21:44:06+04:30 [COMMAND_EXIT_CODE="0"]
